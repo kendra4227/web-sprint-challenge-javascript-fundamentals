@@ -6,17 +6,19 @@
 const external = "I'm outside the function";
 
 function myFunction() {
-  console.log(external);
-  const internal = "Hello! I'm inside myFunction!";
+    console.log(external);
+    const internal = "Hello! I'm inside myFunction!";
 
-  function nestedFunction() {
-    console.log(internal);
-  };
-  nestedFunction();
+    function nestedFunction() {
+        console.log(internal);
+    };
+    nestedFunction();
 }
 myFunction();
 
 // Explanation: 
+/*A nested function can be returned either as a property of a new object or as a result by itself. No matter where, it still has access to the same outer variables.
+ */
 
 
 /* Task 2: Counter */
