@@ -22,14 +22,14 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 
 const displayNames = [];
-zooAnimals.forEach(function(item, index, array) {
-    return displayNames.push(animal_name, scientific_name)
+zooAnimals.forEach(function() {
+    return displayNames.push(item, index, array)
 })
 console.log(displayNames);
 
 
-/* Request 2: .map()    
-The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.       
+/* Request 2: .map()
+The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the result.    
 */
 
 const lowCaseAnimalNames = zooAnimals.map(function(names) {
@@ -53,7 +53,11 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
         
 */
-let populationTotal = 0;
+let populationTotal = zooAnimals.reduce(function(sum, animal) {
+
+    return sum + animal.population
+
+}, 0)
 console.log(populationTotal);
 
 
@@ -65,9 +69,7 @@ console.log(populationTotal);
  * The last parameter accepts a callback
  * The consume function should return the invocation of cb, passing a and b into cb as arguments
  */
-function consume(a, b, cb) {
 
-}
 
 /* Step 2: Create several functions to callback with consume();
  * Create a function named add that returns the sum of two numbers
