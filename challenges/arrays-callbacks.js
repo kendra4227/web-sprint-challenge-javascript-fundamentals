@@ -41,7 +41,7 @@ The zoos are concerned about animals with a lower population count. Using filter
 */
 const lowPopulationAnimals = zooAnimals.filter(function(animal) {
     if (zooAnimals.population < 5) {
-        return animal.population;
+        return animal.animal_name && animal.population;
     }
 })
 console.log(lowPopulationAnimals);
@@ -74,12 +74,37 @@ console.log(populationTotal);
  * Create a function named multiply that returns the product of two numbers 
  * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
  */
+function consume(a, b, cb) {
+    this.a = a;
+    this.b = b;
+    this.cb = cb;
+    return;
+};
 
+function add(sum, a, b) {
+    sum = a + b;
+    a = 2;
+    b = 2;
+    return sum;
+}
 
+function multiply(product, a, b) {
+    product = a * b;
+    a = 10;
+    b = 16;
+    return product;
+}
+
+function greeting(firstName, lastName) {
+    firstName = 'Mary';
+    lastName = 'Poppins';
+    return `Hello ${firstName} ${lastName}, nice to meet you!`
+
+}
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// console.log(consume(2, 2, add)); // 4
-// console.log(consume(10, 16, multiply)); // 160
-// console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 /*
 
